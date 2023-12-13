@@ -22,7 +22,7 @@ router.post('/update', async (req, res) => {
             userElectricity.user = _id;
             userElectricity.currentVoltage = currentVoltage;
             userElectricity.rmsCurrent = rmsCurrent;
-            userElectricity.powerUsed += powerUsed * (5 / 3600000000.0);
+            userElectricity.powerUsed = powerUsed;
 
             // Check if the date has changed
             const today = new Date().toLocaleDateString();
