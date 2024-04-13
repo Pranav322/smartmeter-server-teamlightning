@@ -14,6 +14,9 @@ app.use(cors());
 app.use(express.json());
 
 // Available Routes
+app.use('/', (req, res) => {
+      res.send('Welcome to the server page of Smart Meter created by Teaam Losers');
+});
 app.use('/api/auth', require('./Routes/auth'));
 app.use(updateDataRoute);
 app.use('/api/userElectricity', updateDataRoute);
@@ -21,6 +24,5 @@ app.use('/api/userElectricity', updateDataRoute);
 const server = app.listen(port, () => {
       console.log(`smartMeter - Backend listening on http://127.0.0.1:${port}`);
 });
-
 
 module.exports = { app, server }; // Export the components for potential reuse
