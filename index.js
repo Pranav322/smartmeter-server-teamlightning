@@ -14,9 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 // Available Routes
-app.use('/', (req, res) => {
-      res.send('Welcome to the server page of Smart Meter created by Teaam Losers');
-});
+
 app.use('/api/auth', require('./Routes/auth'));
 app.use(updateDataRoute);
 app.use('/api/userElectricity', updateDataRoute);
